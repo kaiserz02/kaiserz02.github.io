@@ -11,35 +11,71 @@
   <meta property="og:title" content="Kim Brian De Silva — Senior Full Stack Engineer" />
   <meta property="og:description" content=".NET | React | Angular | Azure. 4+ years building and stabilizing mission-critical enterprise applications." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kaiserz02.github.io/" />
+  <meta property="og:image" content="https://kaiserz02.github.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kim Brian De Silva — Senior Full Stack Engineer" />
+  <meta name="twitter:description" content=".NET | React | Angular | Azure. 4+ years building mission-critical enterprise apps." />
+  <meta name="twitter:image" content="https://kaiserz02.github.io/og-image.png" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="hero">
+  <!-- STICKY NAV -->
+  <header class="nav" id="nav">
+    <div class="nav-inner container">
+      <a class="brand" href="#top" aria-label="Home">KBDS</a>
+      <nav class="nav-links" aria-label="Section navigation">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#exploring">Exploring</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
     <div class="container">
-      <p class="eyebrow">Pampanga, Philippines · Open to opportunities</p>
+      <p class="availability"><span class="dot" aria-hidden="true"></span>Open to opportunities</p>
       <h1>Kim Brian De Silva</h1>
       <p class="tagline">Senior Full Stack Engineer · .NET&nbsp;|&nbsp;React&nbsp;|&nbsp;Angular&nbsp;|&nbsp;Azure</p>
+      <p class="rotator">Building with
+        <span class="rotate-word" id="rotateWord" aria-live="polite">.NET</span>
+      </p>
       <p class="lede">
         4+ years building, optimizing, and stabilizing mission-critical applications
         across financial services, tax, mobility, and HR platforms.
       </p>
-      <nav class="hero-links" aria-label="Primary links">
+      <nav class="link-row" aria-label="Primary links">
         <a class="btn btn-primary" href="resume.pdf" download>Download Résumé</a>
         <a class="btn" href="mailto:desilva.kb02@gmail.com">Email</a>
         <a class="btn" href="https://linkedin.com/in/kbdsilva" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn" href="https://github.com/kaiserz02" target="_blank" rel="noopener">GitHub</a>
       </nav>
     </div>
-  </header>
+  </section>
+
+  <!-- IMPACT STATS -->
+  <section class="stats-band" aria-label="Career highlights">
+    <div class="container stats-grid reveal">
+      <div class="stat"><span class="num" data-target="4" data-suffix="+">0</span><span class="label">Years Experience</span></div>
+      <div class="stat"><span class="num" data-target="18" data-suffix="+">0</span><span class="label">Enterprise Apps Stabilized</span></div>
+      <div class="stat"><span class="num" data-target="5" data-suffix="">0</span><span class="label">Flagship Projects</span></div>
+      <div class="stat"><span class="num" data-target="4" data-suffix="">0</span><span class="label">Companies</span></div>
+    </div>
+  </section>
 
   <main id="main" class="container">
 
     <!-- ABOUT -->
-    <section id="about" aria-labelledby="about-h">
+    <section id="about" class="reveal" aria-labelledby="about-h">
       <h2 id="about-h">About</h2>
       <p>
         Senior Full Stack Engineer with 4+ years of enterprise experience building, optimizing, and
@@ -54,9 +90,9 @@
 
     <!-- EXPERIENCE -->
     <section id="experience" aria-labelledby="exp-h">
-      <h2 id="exp-h">Experience</h2>
+      <h2 id="exp-h" class="reveal">Experience</h2>
 
-      <article class="entry">
+      <article class="entry reveal">
         <div class="entry-head">
           <h3>Full Stack Developer — AgilityX Team</h3>
           <span class="dates">Apr 2026 – Present</span>
@@ -71,7 +107,7 @@
         </ul>
       </article>
 
-      <article class="entry">
+      <article class="entry reveal">
         <div class="entry-head">
           <h3>Full Stack Developer — Core Client SWAT Team</h3>
           <span class="dates">Jul 2025 – Mar 2026</span>
@@ -87,7 +123,7 @@
         </ul>
       </article>
 
-      <article class="entry">
+      <article class="entry reveal">
         <div class="entry-head">
           <h3>Software Engineer</h3>
           <span class="dates">Jun 2024 – May 2025</span>
@@ -102,7 +138,7 @@
         </ul>
       </article>
 
-      <article class="entry">
+      <article class="entry reveal">
         <div class="entry-head">
           <h3>C# .NET Developer</h3>
           <span class="dates">Feb 2022 – Jun 2024</span>
@@ -120,33 +156,33 @@
 
     <!-- PROJECTS -->
     <section id="projects" aria-labelledby="proj-h">
-      <h2 id="proj-h">Key Projects</h2>
+      <h2 id="proj-h" class="reveal">Key Projects</h2>
       <div class="cards">
-        <article class="card">
+        <article class="card reveal">
           <h3>EY AgilityX — Mobility &amp; Tax Platform</h3>
           <p class="tags"><span>React</span><span>TypeScript</span><span>.NET</span><span>Azure</span></p>
           <p>Full-stack feature development on an EY-internal mobility and tax product used daily by EY employees globally, accelerated with AI-assisted workflows.</p>
         </article>
 
-        <article class="card">
+        <article class="card reveal">
           <h3>Enterprise Syndicate Applications — EY SWAT</h3>
           <p class="tags"><span>.NET 6/9</span><span>Angular</span><span>React</span><span>Blazor</span></p>
           <p>Stabilized and enhanced 18+ enterprise systems across EY's client portfolio — production fixes, performance improvements, and automation under SLA pressure.</p>
         </article>
 
-        <article class="card">
+        <article class="card reveal">
           <h3>PDS Websites Revamp — Philippine Dealing System</h3>
           <p class="tags"><span>.NET Core 8</span><span>Blazor</span><span>Vue.js</span><span>MySQL</span></p>
           <p>Led redevelopment of administrative and public-facing financial platforms for one of the Philippines' primary securities market operators.</p>
         </article>
 
-        <article class="card">
+        <article class="card reveal">
           <h3>PSE EQUIP — Real-Time Equities Platform</h3>
           <p class="tags"><span>Real-time</span><span>Analytics</span><span>.NET</span></p>
           <p>Contributed to a real-time stock data platform with live analytics and portfolio tracking, supporting investor decision-making at scale.</p>
         </article>
 
-        <article class="card">
+        <article class="card reveal">
           <h3>Hughes Mobile App — Xamarin → .NET MAUI</h3>
           <p class="tags"><span>.NET MAUI</span><span>Xamarin</span><span>Mobile</span></p>
           <p>End-to-end migration of a chauffeur booking, tracking, and in-app payments app from Xamarin to .NET MAUI — improving performance and cross-platform coverage.</p>
@@ -156,8 +192,25 @@
 
     <!-- SKILLS -->
     <section id="skills" aria-labelledby="skills-h">
-      <h2 id="skills-h">Technical Skills</h2>
-      <dl class="skills">
+      <h2 id="skills-h" class="reveal">Technical Skills</h2>
+
+      <!-- Tech-stack logo grid -->
+      <ul class="tech-grid reveal" aria-label="Core technologies">
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="" loading="lazy" /><span>C#</span></li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" alt="" loading="lazy" /><span>.NET</span></li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="" loading="lazy" /><span>TypeScript</span></li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" loading="lazy" /><span>JavaScript</span></li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" loading="lazy" /><span>React</span></li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg" alt="" loading="lazy" /><span>Angular</span></li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="" loading="lazy" /><span>Vue.js</span></li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="" loading="lazy" /><span>Azure</span></li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="" loading="lazy" /><span>SQL Server</span></li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="" loading="lazy" /><span>PostgreSQL</span></li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="" loading="lazy" /><span>Docker</span></li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" loading="lazy" /><span>Git</span></li>
+      </ul>
+
+      <dl class="skills reveal">
         <div><dt>Languages</dt><dd>C#, TypeScript, JavaScript (ES6+), Python, F#</dd></div>
         <div><dt>Frontend</dt><dd>React, Angular, Vue.js, Blazor, .NET MAUI</dd></div>
         <div><dt>Backend</dt><dd>.NET Core / ASP.NET MVC, RESTful APIs, GraphQL, Microservices</dd></div>
@@ -171,17 +224,50 @@
       </dl>
     </section>
 
+    <!-- CURRENTLY EXPLORING -->
+    <section id="exploring" aria-labelledby="explore-h">
+      <h2 id="explore-h" class="reveal">Currently Exploring</h2>
+      <p class="reveal section-intro">Where I'm investing next — building on my .NET &amp; Azure foundation toward the AI-native stack.</p>
+      <div class="cards">
+        <article class="card explore reveal">
+          <h3>AI Engineering on .NET</h3>
+          <p class="tags"><span>Azure OpenAI</span><span>Semantic Kernel</span><span>RAG</span></p>
+          <p>Building LLM-powered features with <code>Microsoft.Extensions.AI</code>, Semantic Kernel, and retrieval-augmented generation over Azure AI Search.</p>
+        </article>
+        <article class="card explore reveal">
+          <h3>Model Context Protocol (MCP)</h3>
+          <p class="tags"><span>C#</span><span>AI Agents</span><span>Tooling</span></p>
+          <p>Authoring MCP servers in C# to connect AI assistants to real systems and data — the emerging standard for agentic tooling.</p>
+        </article>
+        <article class="card explore reveal">
+          <h3>.NET Aspire</h3>
+          <p class="tags"><span>Cloud-Native</span><span>Distributed</span><span>Orchestration</span></p>
+          <p>Composing observable, distributed cloud-native apps with .NET Aspire's orchestration and service-defaults model.</p>
+        </article>
+        <article class="card explore reveal">
+          <h3>OpenTelemetry</h3>
+          <p class="tags"><span>Tracing</span><span>Metrics</span><span>Logs</span></p>
+          <p>Standardizing observability on vendor-neutral OpenTelemetry — a natural evolution of my Grafana &amp; Sentry experience.</p>
+        </article>
+        <article class="card explore reveal">
+          <h3>Kubernetes &amp; IaC</h3>
+          <p class="tags"><span>AKS</span><span>Bicep</span><span>Terraform</span></p>
+          <p>Deepening platform-engineering skills with Azure Kubernetes Service and infrastructure-as-code via Bicep and Terraform.</p>
+        </article>
+      </div>
+    </section>
+
     <!-- EDUCATION & CERTS -->
     <section id="education" aria-labelledby="edu-h">
-      <h2 id="edu-h">Education &amp; Certifications</h2>
-      <article class="entry">
+      <h2 id="edu-h" class="reveal">Education &amp; Certifications</h2>
+      <article class="entry reveal">
         <div class="entry-head">
           <h3>B.S. in Information Technology</h3>
           <span class="dates">Angeles University Foundation</span>
         </div>
         <p class="stack-line">Specialization: Web &amp; Mobile Development · Academic Scholar (AUF &amp; Tulong Dunong Program)</p>
       </article>
-      <ul class="certs">
+      <ul class="certs reveal">
         <li>ASP.NET Core Identity &amp; Security</li>
         <li>RESTful Web API Development (.NET)</li>
         <li>Microsoft Technology Associate: Python</li>
@@ -193,10 +279,11 @@
 
     <!-- CONTACT -->
     <section id="contact" aria-labelledby="contact-h">
-      <h2 id="contact-h">Get in touch</h2>
-      <p>Open to senior full-stack and backend-leaning roles. The fastest way to reach me is email.</p>
-      <nav class="hero-links" aria-label="Contact links">
+      <h2 id="contact-h" class="reveal">Get in touch</h2>
+      <p class="reveal">Open to senior full-stack and backend-leaning roles. The fastest way to reach me is email.</p>
+      <nav class="link-row reveal" aria-label="Contact links">
         <a class="btn btn-primary" href="mailto:desilva.kb02@gmail.com?subject=Opportunity%20for%20Kim%20Brian%20De%20Silva">desilva.kb02@gmail.com</a>
+        <button class="btn" id="copyEmail" type="button" data-email="desilva.kb02@gmail.com">Copy email</button>
         <a class="btn" href="tel:+639268389237">+63 926 838 9237</a>
         <a class="btn" href="https://linkedin.com/in/kbdsilva" target="_blank" rel="noopener">LinkedIn</a>
       </nav>
@@ -208,6 +295,7 @@
     <p>© <span id="year">2026</span> Kim Brian De Silva · Built with plain HTML &amp; CSS.</p>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <!-- Back to top -->
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top">↑</button>
 </body>
 </html>
