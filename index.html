@@ -21,6 +21,38 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
+
+  <!-- Structured data (schema.org Person) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kim Brian De Silva",
+    "jobTitle": "Senior Full Stack Engineer",
+    "url": "https://kaiserz02.github.io/",
+    "image": "https://kaiserz02.github.io/og-image.png",
+    "email": "mailto:desilva.kb02@gmail.com",
+    "telephone": "+639268389237",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pampanga",
+      "addressCountry": "PH"
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "name": "EY GDS (CS) Philippines Inc."
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Angeles University Foundation"
+    },
+    "knowsAbout": [".NET", "C#", "React", "Angular", "TypeScript", "Azure", ".NET MAUI", "SQL Server"],
+    "sameAs": [
+      "https://linkedin.com/in/kbdsilva",
+      "https://github.com/kaiserz02"
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -67,7 +99,7 @@
     <div class="container stats-grid reveal">
       <div class="stat"><span class="num" data-target="4" data-suffix="+">0</span><span class="label">Years Experience</span></div>
       <div class="stat"><span class="num" data-target="18" data-suffix="+">0</span><span class="label">Enterprise Apps Stabilized</span></div>
-      <div class="stat"><span class="num" data-target="5" data-suffix="">0</span><span class="label">Flagship Projects</span></div>
+      <div class="stat"><span class="num" data-target="6" data-suffix="">0</span><span class="label">Flagship Projects</span></div>
       <div class="stat"><span class="num" data-target="4" data-suffix="">0</span><span class="label">Companies</span></div>
     </div>
   </section>
@@ -148,6 +180,7 @@
         <ul>
           <li>Built and maintained features across multiple .NET applications for recruitment, HR, and mobile operations.</li>
           <li>Led migration of the Hughes Mobile App from legacy Xamarin to .NET MAUI, improving cross-platform performance and supportability.</li>
+          <li>Built and maintained <strong>HCMevolve</strong>, a .NET MAUI employee self-service app for timesheet, payroll, and profile management published on Google Play.</li>
           <li>Resolved SQL bottlenecks and improved query performance, enhancing reliability and responsiveness.</li>
           <li>Supported automation of HR and payroll workflows, improving operational efficiency for client organizations.</li>
         </ul>
@@ -174,18 +207,36 @@
           <h3>PDS Websites Revamp — Philippine Dealing System</h3>
           <p class="tags"><span>.NET Core 8</span><span>Blazor</span><span>Vue.js</span><span>MySQL</span></p>
           <p>Led redevelopment of administrative and public-facing financial platforms for one of the Philippines' primary securities market operators.</p>
+          <p class="card-link">
+            <a href="https://www.pds.com.ph/" target="_blank" rel="noopener">Visit pds.com.ph &rarr;</a>
+          </p>
         </article>
 
         <article class="card reveal">
           <h3>PSE EQUIP — Real-Time Equities Platform</h3>
           <p class="tags"><span>Real-time</span><span>Analytics</span><span>.NET</span></p>
           <p>Contributed to a real-time stock data platform with live analytics and portfolio tracking, supporting investor decision-making at scale.</p>
+          <p class="card-link">
+            <a href="https://equip.pse.com.ph/" target="_blank" rel="noopener">Visit equip.pse.com.ph &rarr;</a>
+          </p>
         </article>
 
         <article class="card reveal">
           <h3>Hughes Mobile App — Xamarin → .NET MAUI</h3>
           <p class="tags"><span>.NET MAUI</span><span>Xamarin</span><span>Mobile</span></p>
           <p>End-to-end migration of a chauffeur booking, tracking, and in-app payments app from Xamarin to .NET MAUI — improving performance and cross-platform coverage.</p>
+          <p class="card-link">
+            <a href="https://play.google.com/store/apps/details?id=au.com.hugheslimousines.publicapp" target="_blank" rel="noopener">View on Google Play &rarr;</a>
+          </p>
+        </article>
+
+        <article class="card reveal">
+          <h3>HCMevolve — Employee Self-Service App</h3>
+          <p class="tags"><span>.NET MAUI</span><span>C#</span><span>Mobile</span><span>HR / Payroll</span></p>
+          <p>Cross-platform employee app for timesheet &amp; payroll management — profile management, multi-entry timesheets with approval workflow, and emergency contacts, gated by role-based access. Built and maintained end-to-end with .NET MAUI.</p>
+          <p class="card-link">
+            <a href="https://play.google.com/store/apps/details?id=com.HCMevolve.employee" target="_blank" rel="noopener">View on Google Play &rarr;</a>
+          </p>
         </article>
       </div>
     </section>
