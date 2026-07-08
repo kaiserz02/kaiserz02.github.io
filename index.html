@@ -57,11 +57,14 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- Scroll progress -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
   <!-- STICKY NAV -->
   <header class="nav" id="nav">
     <div class="nav-inner container">
       <a class="brand" href="#top" aria-label="Home">KBDS</a>
-      <nav class="nav-links" aria-label="Section navigation">
+      <nav class="nav-links" id="navLinks" aria-label="Section navigation">
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
@@ -69,6 +72,12 @@
         <a href="#exploring">Exploring</a>
         <a href="#contact">Contact</a>
       </nav>
+      <button class="nav-toggle" id="navToggle" type="button"
+              aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
     </div>
   </header>
 
@@ -97,10 +106,10 @@
   <!-- IMPACT STATS -->
   <section class="stats-band" aria-label="Career highlights">
     <div class="container stats-grid reveal">
-      <div class="stat"><span class="num" data-target="4" data-suffix="+">0</span><span class="label">Years Experience</span></div>
       <div class="stat"><span class="num" data-target="18" data-suffix="+">0</span><span class="label">Enterprise Apps Stabilized</span></div>
-      <div class="stat"><span class="num" data-target="6" data-suffix="">0</span><span class="label">Flagship Projects</span></div>
-      <div class="stat"><span class="num" data-target="4" data-suffix="">0</span><span class="label">Companies</span></div>
+      <div class="stat"><span class="num" data-target="6" data-suffix="">0</span><span class="label">Flagship Projects Delivered</span></div>
+      <div class="stat"><span class="num" data-target="4" data-suffix="+">0</span><span class="label">Years of Experience</span></div>
+      <div class="stat"><span class="num" data-target="4" data-suffix="">0</span><span class="label">Industries Served</span></div>
     </div>
   </section>
 
@@ -190,20 +199,31 @@
     <!-- PROJECTS -->
     <section id="projects" aria-labelledby="proj-h">
       <h2 id="proj-h" class="reveal">Key Projects</h2>
-      <div class="cards">
-        <article class="card reveal">
+
+      <div class="filter-bar reveal" role="group" aria-label="Filter projects by technology">
+        <button class="chip active" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" type="button" data-filter="dotnet" aria-pressed="false">.NET</button>
+        <button class="chip" type="button" data-filter="react" aria-pressed="false">React</button>
+        <button class="chip" type="button" data-filter="angular" aria-pressed="false">Angular</button>
+        <button class="chip" type="button" data-filter="blazor" aria-pressed="false">Blazor</button>
+        <button class="chip" type="button" data-filter="maui" aria-pressed="false">.NET MAUI</button>
+        <button class="chip" type="button" data-filter="azure" aria-pressed="false">Azure</button>
+      </div>
+
+      <div class="cards" id="projectCards">
+        <article class="card reveal" data-tags="react dotnet azure">
           <h3>EY AgilityX — Mobility &amp; Tax Platform</h3>
           <p class="tags"><span>React</span><span>TypeScript</span><span>.NET</span><span>Azure</span></p>
           <p>Full-stack feature development on an EY-internal mobility and tax product used daily by EY employees globally, accelerated with AI-assisted workflows.</p>
         </article>
 
-        <article class="card reveal">
+        <article class="card reveal" data-tags="dotnet angular react blazor">
           <h3>Enterprise Syndicate Applications — EY SWAT</h3>
           <p class="tags"><span>.NET 6/9</span><span>Angular</span><span>React</span><span>Blazor</span></p>
           <p>Stabilized and enhanced 18+ enterprise systems across EY's client portfolio — production fixes, performance improvements, and automation under SLA pressure.</p>
         </article>
 
-        <article class="card reveal">
+        <article class="card reveal" data-tags="dotnet blazor">
           <h3>PDS Websites Revamp — Philippine Dealing System</h3>
           <p class="tags"><span>.NET Core 8</span><span>Blazor</span><span>Vue.js</span><span>MySQL</span></p>
           <p>Led redevelopment of administrative and public-facing financial platforms for one of the Philippines' primary securities market operators.</p>
@@ -212,7 +232,7 @@
           </p>
         </article>
 
-        <article class="card reveal">
+        <article class="card reveal" data-tags="dotnet">
           <h3>PSE EQUIP — Real-Time Equities Platform</h3>
           <p class="tags"><span>Real-time</span><span>Analytics</span><span>.NET</span></p>
           <p>Contributed to a real-time stock data platform with live analytics and portfolio tracking, supporting investor decision-making at scale.</p>
@@ -221,7 +241,7 @@
           </p>
         </article>
 
-        <article class="card reveal">
+        <article class="card reveal" data-tags="maui dotnet">
           <h3>Hughes Mobile App — Xamarin → .NET MAUI</h3>
           <p class="tags"><span>.NET MAUI</span><span>Xamarin</span><span>Mobile</span></p>
           <p>End-to-end migration of a chauffeur booking, tracking, and in-app payments app from Xamarin to .NET MAUI — improving performance and cross-platform coverage.</p>
@@ -230,7 +250,7 @@
           </p>
         </article>
 
-        <article class="card reveal">
+        <article class="card reveal" data-tags="maui dotnet">
           <h3>HCMevolve — Employee Self-Service App</h3>
           <p class="tags"><span>.NET MAUI</span><span>C#</span><span>Mobile</span><span>HR / Payroll</span></p>
           <p>Cross-platform employee app for timesheet &amp; payroll management — profile management, multi-entry timesheets with approval workflow, and emergency contacts, gated by role-based access. Built and maintained end-to-end with .NET MAUI.</p>

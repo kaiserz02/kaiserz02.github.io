@@ -109,4 +109,80 @@
       }
     });
   }
+
+  /* ---- Scroll progress bar ---- */
+  var progressEl = document.getElementById("scrollProgress");
+  if (progressEl) {
+    var updateProgress = function () {
+      var doc = document.documentElement;
+      var max = doc.scrollHeight - doc.clientHeight;
+      var ratio = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
+      progressEl.style.transform = "scaleX(" + ratio + ")";
+    };
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+    updateProgress();
+  }
+
+  /* ---- Mobile nav toggle ---- */
+  var navToggle = document.getElementById("navToggle");
+  var navLinksEl = document.getElementById("navLinks");
+  if (navToggle && navLinksEl) {
+    var closeMenu = function () {
+      navLinksEl.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+    };
+    navToggle.addEventListener("click", function () {
+      var open = navLinksEl.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    navLinksEl.addEventListener("click", function (e) {
+      if (e.target.tagName === "A") closeMenu();
+    });
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 640) closeMenu();
+    });
+  }
+
+  /* ---- Project filter chips ---- */
+  var filterBar = document.querySelector(".filter-bar");
+  var cardsEl = document.getElementById("projectCards");
+  if (filterBar && cardsEl) {
+    var projectCards = Array.prototype.slice.call(cardsEl.querySelectorAll(".card"));
+    filterBar.addEventListener("click", function (e) {
+      var btn = e.target.closest(".chip");
+      if (!btn) return;
+      var filter = btn.getAttribute("data-filter");
+      filterBar.querySelectorAll(".chip").forEach(function (c) {
+        var on = c === btn;
+        c.classList.toggle("active", on);
+        c.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+      projectCards.forEach(function (card) {
+        var tags = (card.getAttribute("data-tags") || "").split(" ");
+        var show = filter === "all" || tags.indexOf(filter) !== -1;
+        card.classList.remove("filter-in");
+        if (show) {
+          card.classList.remove("is-hidden");
+          if (!reduceMotion) {
+            void card.offsetWidth; // restart entrance animation
+            card.classList.add("filter-in");
+          }
+        } else {
+          card.classList.add("is-hidden");
+        }
+      });
+    });
+  }
+
+  /* ---- Card pointer spotlight ---- */
+  if (!reduceMotion && window.matchMedia("(pointer: fine)").matches) {
+    document.querySelectorAll(".card").forEach(function (card) {
+      card.addEventListener("pointermove", function (e) {
+        var rect = card.getBoundingClientRect();
+        card.style.setProperty("--mx", (e.clientX - rect.left) + "px");
+        card.style.setProperty("--my", (e.clientY - rect.top) + "px");
+      });
+    });
+  }
 })();
