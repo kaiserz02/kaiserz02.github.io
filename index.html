@@ -19,6 +19,9 @@
   <meta name="twitter:image" content="https://kaiserz02.github.io/og-image.png" />
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
 
@@ -63,15 +66,18 @@
   <!-- STICKY NAV -->
   <header class="nav" id="nav">
     <div class="nav-inner container">
-      <a class="brand" href="#top" aria-label="Home">KBDS</a>
+      <a class="brand" href="#top" aria-label="Home">
+        <span class="brand-mark">KB</span><span class="brand-rest">DS</span>
+      </a>
       <nav class="nav-links" id="navLinks" aria-label="Section navigation">
         <a href="#about">About</a>
+        <a href="#projects">Work</a>
         <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
+        <a href="#skills">Stack</a>
         <a href="#exploring">Exploring</a>
         <a href="#contact">Contact</a>
       </nav>
+      <a class="nav-cta" href="#contact">Let's work together</a>
       <button class="nav-toggle" id="navToggle" type="button"
               aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
         <span class="nav-toggle-bar"></span>
@@ -83,122 +89,112 @@
 
   <!-- HERO -->
   <section class="hero" id="top">
-    <div class="container">
-      <p class="availability"><span class="dot" aria-hidden="true"></span>Open to opportunities</p>
-      <h1>Kim Brian De Silva</h1>
-      <p class="tagline">Senior Full Stack Developer · .NET&nbsp;|&nbsp;React&nbsp;|&nbsp;Angular&nbsp;|&nbsp;Azure</p>
-      <p class="rotator">Building with
+    <div class="container hero-inner">
+      <p class="eyebrow"><span class="rule" aria-hidden="true"></span>Kim Brian De Silva — Senior Full Stack Developer</p>
+
+      <h1 class="display">
+        <span>Build.</span>
+        <span>Ship.</span>
+        <span>Stabilize.</span>
+      </h1>
+
+      <p class="lede">
+        4+ years building, optimizing, and stabilizing mission-critical applications across
+        financial services, tax, mobility, and HR platforms — currently on EY GDS's AgilityX team.
+      </p>
+
+      <p class="rotator">Currently building with
         <span class="rotate-word" id="rotateWord" aria-live="polite">.NET</span>
       </p>
-      <p class="lede">
-        4+ years building, optimizing, and stabilizing mission-critical applications
-        across financial services, tax, mobility, and HR platforms.
-      </p>
+
       <nav class="link-row" aria-label="Primary links">
-        <a class="btn btn-primary" href="resume.pdf" download>Download Résumé</a>
-        <a class="btn" href="mailto:desilva.kb02@gmail.com">Email</a>
+        <a class="btn btn-primary" href="#projects">View my work <span aria-hidden="true">→</span></a>
+        <a class="btn" href="resume.pdf" download>Download résumé</a>
         <a class="btn" href="https://linkedin.com/in/kbdsilva" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn" href="https://github.com/kaiserz02" target="_blank" rel="noopener">GitHub</a>
       </nav>
+
+      <!-- Hero stats -->
+      <div class="hero-stats reveal">
+        <div class="stat">
+          <span class="num" data-target="18" data-suffix="+">0</span>
+          <span class="label">Enterprise apps stabilized</span>
+        </div>
+        <div class="stat">
+          <span class="num" data-target="6" data-suffix="">0</span>
+          <span class="label">Flagship projects delivered</span>
+        </div>
+        <div class="stat">
+          <span class="num" data-target="4" data-suffix="+">0</span>
+          <span class="label">Years of experience</span>
+        </div>
+        <div class="stat">
+          <span class="num-text">.NET · Cloud</span>
+          <span class="label">Full-stack delivery</span>
+        </div>
+      </div>
+
+      <p class="availability"><span class="dot" aria-hidden="true"></span>Open to opportunities</p>
     </div>
+
+    <a class="scroll-cue" href="#about" aria-label="Scroll to about">
+      <span class="scroll-cue-arrow" aria-hidden="true">↓</span>
+      <span class="scroll-cue-text">Scroll</span>
+    </a>
   </section>
 
-  <!-- IMPACT STATS -->
-  <section class="stats-band" aria-label="Career highlights">
-    <div class="container stats-grid reveal">
-      <div class="stat"><span class="num" data-target="18" data-suffix="+">0</span><span class="label">Enterprise Apps Stabilized</span></div>
-      <div class="stat"><span class="num" data-target="6" data-suffix="">0</span><span class="label">Flagship Projects Delivered</span></div>
-      <div class="stat"><span class="num" data-target="4" data-suffix="+">0</span><span class="label">Years of Experience</span></div>
-      <div class="stat"><span class="num" data-target="4" data-suffix="">0</span><span class="label">Industries Served</span></div>
-    </div>
-  </section>
+  <main id="main">
 
-  <main id="main" class="container">
-
-    <!-- ABOUT -->
-    <section id="about" class="reveal" aria-labelledby="about-h">
-      <h2 id="about-h">About</h2>
-      <p>
-        Senior Full Stack Developer with 4+ years of enterprise experience building, optimizing, and
-        stabilizing mission-critical applications across financial services, tax, mobility, and HR
-        platforms. Currently a core member of EY GDS's AgilityX team, delivering full-stack features
-        on an EY-wide mobility and tax product using React, TypeScript, .NET, and Azure. Specializes
-        in production incident resolution, API performance optimization, and scalable system design —
-        translating complex business requirements into reliable, cloud-native solutions within Agile
-        delivery frameworks.
-      </p>
+    <!-- 01 — ABOUT -->
+    <section id="about" class="container" aria-labelledby="about-h">
+      <div class="sec-head reveal">
+        <p class="sec-num">01 — About</p>
+        <h2 id="about-h">Enterprise systems, kept running and made faster.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="reveal">
+          <p class="big-copy">
+            Senior Full Stack Developer with 4+ years of enterprise experience building, optimizing, and
+            stabilizing mission-critical applications across financial services, tax, mobility, and HR platforms.
+          </p>
+          <p>
+            Currently a core member of EY GDS's AgilityX team, delivering full-stack features on an EY-wide
+            mobility and tax product using React, TypeScript, .NET, and Azure. I specialize in production
+            incident resolution, API performance optimization, and scalable system design — translating complex
+            business requirements into reliable, cloud-native solutions within Agile delivery frameworks.
+          </p>
+        </div>
+        <aside class="about-side reveal">
+          <div class="fact">
+            <p class="fact-k">Based in</p>
+            <p class="fact-v">Pampanga, Philippines</p>
+          </div>
+          <div class="fact">
+            <p class="fact-k">Focus</p>
+            <p class="fact-v">.NET · React · Angular · Azure</p>
+          </div>
+          <div class="fact">
+            <p class="fact-k">Industries</p>
+            <p class="fact-v">Financial services · Tax · Mobility · HR</p>
+          </div>
+          <div class="fact">
+            <p class="fact-k">Strengths</p>
+            <p class="fact-v">Incident resolution · API &amp; SQL performance · Clean Architecture</p>
+          </div>
+        </aside>
+      </div>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience" aria-labelledby="exp-h">
-      <h2 id="exp-h" class="reveal">Experience</h2>
-
-      <article class="entry reveal">
-        <div class="entry-head">
-          <h3>Full Stack Developer — AgilityX Team</h3>
-          <span class="dates">Apr 2026 – Present</span>
-        </div>
-        <p class="org">EY GDS (CS) Philippines Inc.</p>
-        <p class="stack-line">Mobility &amp; Tax Product · React · TypeScript · .NET · Azure</p>
-        <ul>
-          <li>Develop and deliver full-stack features on an EY-wide mobility and tax platform serving day-to-day EY users.</li>
-          <li>Translate business and compliance requirements into scalable, production-ready solutions within a cross-functional Agile team.</li>
-          <li>Contribute to API design and integration with clean, maintainable TypeScript/C# aligned with Clean Architecture principles.</li>
-          <li>Participate in code reviews, sprint planning, and CI/CD deployments via Azure DevOps.</li>
-        </ul>
-      </article>
-
-      <article class="entry reveal">
-        <div class="entry-head">
-          <h3>Full Stack Developer — Core Client SWAT Team</h3>
-          <span class="dates">Jul 2025 – Mar 2026</span>
-        </div>
-        <p class="org">EY GDS (CS) Philippines Inc.</p>
-        <p class="stack-line">Enterprise Applications · .NET 6/9 · Angular · React · Blazor · Azure DevOps</p>
-        <ul>
-          <li>Selected for the elite SWAT Team, resolving high-severity production incidents across 18+ enterprise applications and reducing mean time to resolution.</li>
-          <li>Engineered and enhanced full-stack systems using .NET 6/9, Angular, React, and Blazor at scale.</li>
-          <li>Designed and optimized REST APIs and complex SQL queries, achieving measurable reductions in backend response latency.</li>
-          <li>Drove root cause analysis on recurring failures, implementing preventive fixes that eliminated regression patterns.</li>
-          <li>Leveraged Grafana and Sentry to proactively monitor system health and address degradations before user impact.</li>
-        </ul>
-      </article>
-
-      <article class="entry reveal">
-        <div class="entry-head">
-          <h3>Software Engineer</h3>
-          <span class="dates">Jun 2024 – May 2025</span>
-        </div>
-        <p class="org">Premier Software Enterprise Inc. (PSEi Subsidiary)</p>
-        <p class="stack-line">Financial Platforms · .NET Core 8 · Blazor · Vue.js · MySQL</p>
-        <ul>
-          <li>Played a pivotal role in modernizing the Philippine Dealing System (PDS), improving security, usability, and performance for a regulated trading environment.</li>
-          <li>Optimized backend services and SQL queries, significantly reducing execution times under high transaction loads.</li>
-          <li>Implemented secure authentication flows using OAuth 2.0 and JWT, strengthening application security posture.</li>
-          <li>Delivered end-to-end features within Azure DevOps Agile workflows alongside product and UX teams.</li>
-        </ul>
-      </article>
-
-      <article class="entry reveal">
-        <div class="entry-head">
-          <h3>C# .NET Developer</h3>
-          <span class="dates">Feb 2022 – Jun 2024</span>
-        </div>
-        <p class="org">1080 Agile Pty. Ltd</p>
-        <p class="stack-line">HR, Recruitment &amp; Mobile · .NET · Blazor · .NET MAUI · Azure DevOps</p>
-        <ul>
-          <li>Built and maintained features across multiple .NET applications for recruitment, HR, and mobile operations.</li>
-          <li>Led migration of the Hughes Mobile App from legacy Xamarin to .NET MAUI, improving cross-platform performance and supportability.</li>
-          <li>Built and maintained <strong>HCMevolve</strong>, a .NET MAUI employee self-service app for timesheet, payroll, and profile management published on Google Play.</li>
-          <li>Resolved SQL bottlenecks and improved query performance, enhancing reliability and responsiveness.</li>
-          <li>Supported automation of HR and payroll workflows, improving operational efficiency for client organizations.</li>
-        </ul>
-      </article>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" aria-labelledby="proj-h">
-      <h2 id="proj-h" class="reveal">Key Projects</h2>
+    <!-- 02 — SELECTED WORK -->
+    <section id="projects" class="container" aria-labelledby="proj-h">
+      <div class="sec-head reveal">
+        <p class="sec-num">02 — Selected work</p>
+        <h2 id="proj-h">Products and platforms shipped to real users.</h2>
+        <p class="sec-lede">
+          Enterprise applications across tax, financial markets, mobility and HR — built, stabilized,
+          published and maintained.
+        </p>
+      </div>
 
       <div class="filter-bar reveal" role="group" aria-label="Filter projects by technology">
         <button class="chip active" type="button" data-filter="all" aria-pressed="true">All</button>
@@ -210,162 +206,326 @@
         <button class="chip" type="button" data-filter="azure" aria-pressed="false">Azure</button>
       </div>
 
-      <div class="cards" id="projectCards">
-        <article class="card reveal" data-tags="react dotnet azure">
+      <div class="work-list" id="projectCards">
+
+        <article class="work reveal featured" data-tags="react dotnet azure">
+          <p class="work-flag">Featured</p>
+          <p class="work-kicker">Enterprise · Mobility &amp; tax</p>
           <h3>EY AgilityX — Mobility &amp; Tax Platform</h3>
-          <p class="tags"><span>React</span><span>TypeScript</span><span>.NET</span><span>Azure</span></p>
-          <p>Full-stack feature development on an EY-internal mobility and tax product used daily by EY employees globally, accelerated with AI-assisted workflows.</p>
+          <p class="work-desc">
+            Full-stack feature development on an EY-internal mobility and tax product used daily by EY
+            employees globally, accelerated with AI-assisted workflows.
+          </p>
+          <dl class="work-meta">
+            <div><dt>Role</dt><dd>Full stack developer — feature delivery, API design &amp; integration</dd></div>
+            <div><dt>Stack</dt><dd>React · TypeScript · .NET · Azure · Azure DevOps</dd></div>
+            <div><dt>Scope</dt><dd>EY-wide platform serving day-to-day EY users, built to Clean Architecture principles</dd></div>
+          </dl>
         </article>
 
-        <article class="card reveal" data-tags="dotnet angular react blazor">
+        <article class="work reveal" data-tags="dotnet angular react blazor">
+          <p class="work-kicker">Enterprise · Production support</p>
           <h3>Enterprise Syndicate Applications — EY SWAT</h3>
-          <p class="tags"><span>.NET 6/9</span><span>Angular</span><span>React</span><span>Blazor</span></p>
-          <p>Stabilized and enhanced 18+ enterprise systems across EY's client portfolio — production fixes, performance improvements, and automation under SLA pressure.</p>
+          <p class="work-desc">
+            Stabilized and enhanced enterprise systems across EY's client portfolio — production fixes,
+            performance improvements, and automation under SLA pressure.
+          </p>
+          <dl class="work-meta">
+            <div><dt>Role</dt><dd>SWAT engineer — incident resolution, root cause analysis</dd></div>
+            <div><dt>Stack</dt><dd>.NET 6/9 · Angular · React · Blazor · Grafana · Sentry</dd></div>
+            <div><dt>Impact</dt><dd>18+ enterprise applications stabilized; reduced mean time to resolution</dd></div>
+          </dl>
         </article>
 
-        <article class="card reveal" data-tags="dotnet blazor">
+        <article class="work reveal" data-tags="dotnet blazor">
+          <p class="work-kicker">Fintech · Capital markets</p>
           <h3>PDS Websites Revamp — Philippine Dealing System</h3>
-          <p class="tags"><span>.NET Core 8</span><span>Blazor</span><span>Vue.js</span><span>MySQL</span></p>
-          <p>Led redevelopment of administrative and public-facing financial platforms for one of the Philippines' primary securities market operators.</p>
+          <p class="work-desc">
+            Redevelopment of administrative and public-facing financial platforms for one of the
+            Philippines' primary securities market operators.
+          </p>
+          <dl class="work-meta">
+            <div><dt>Role</dt><dd>Software engineer — end-to-end feature delivery</dd></div>
+            <div><dt>Stack</dt><dd>.NET Core 8 · Blazor · Vue.js · MySQL · OAuth 2.0 / JWT</dd></div>
+            <div><dt>Impact</dt><dd>Improved security, usability and performance in a regulated trading environment</dd></div>
+          </dl>
           <p class="card-link">
-            <a href="https://www.pds.com.ph/" target="_blank" rel="noopener">Visit pds.com.ph &rarr;</a>
+            <a href="https://www.pds.com.ph/" target="_blank" rel="noopener">Visit pds.com.ph <span aria-hidden="true">→</span></a>
           </p>
         </article>
 
-        <article class="card reveal" data-tags="dotnet">
+        <article class="work reveal" data-tags="dotnet">
+          <p class="work-kicker">Fintech · Real-time equities</p>
           <h3>PSE EQUIP — Real-Time Equities Platform</h3>
-          <p class="tags"><span>Real-time</span><span>Analytics</span><span>.NET</span></p>
-          <p>Contributed to a real-time stock data platform with live analytics and portfolio tracking, supporting investor decision-making at scale.</p>
+          <p class="work-desc">
+            A real-time stock data platform with live analytics and portfolio tracking, supporting
+            investor decision-making at scale.
+          </p>
+          <dl class="work-meta">
+            <div><dt>Role</dt><dd>Contributor — real-time data and analytics features</dd></div>
+            <div><dt>Stack</dt><dd>.NET · Real-time data · Analytics</dd></div>
+            <div><dt>Scope</dt><dd>Live market analytics and portfolio tracking for investors</dd></div>
+          </dl>
           <p class="card-link">
-            <a href="https://equip.pse.com.ph/" target="_blank" rel="noopener">Visit equip.pse.com.ph &rarr;</a>
+            <a href="https://equip.pse.com.ph/" target="_blank" rel="noopener">Visit equip.pse.com.ph <span aria-hidden="true">→</span></a>
           </p>
         </article>
 
-        <article class="card reveal" data-tags="maui dotnet">
+        <article class="work reveal" data-tags="maui dotnet">
+          <p class="work-kicker">Mobility · iOS &amp; Android</p>
           <h3>Hughes Mobile App — Xamarin → .NET MAUI</h3>
-          <p class="tags"><span>.NET MAUI</span><span>Xamarin</span><span>Mobile</span></p>
-          <p>End-to-end migration of a chauffeur booking, tracking, and in-app payments app from Xamarin to .NET MAUI — improving performance and cross-platform coverage.</p>
+          <p class="work-desc">
+            End-to-end migration of a chauffeur booking, tracking, and in-app payments app from
+            legacy Xamarin to .NET MAUI.
+          </p>
+          <dl class="work-meta">
+            <div><dt>Role</dt><dd>Migration lead — architecture and cross-platform delivery</dd></div>
+            <div><dt>Stack</dt><dd>.NET MAUI · Xamarin · C# · Azure DevOps</dd></div>
+            <div><dt>Impact</dt><dd>Improved cross-platform performance, coverage and long-term supportability</dd></div>
+          </dl>
           <p class="card-link">
-            <a href="https://play.google.com/store/apps/details?id=au.com.hugheslimousines.publicapp" target="_blank" rel="noopener">View on Google Play &rarr;</a>
+            <a href="https://play.google.com/store/apps/details?id=au.com.hugheslimousines.publicapp" target="_blank" rel="noopener">View on Google Play <span aria-hidden="true">→</span></a>
           </p>
         </article>
 
-        <article class="card reveal" data-tags="maui dotnet">
+        <article class="work reveal" data-tags="maui dotnet">
+          <p class="work-kicker">HR · Workforce · Android &amp; iOS</p>
           <h3>HCMevolve — Employee Self-Service App</h3>
-          <p class="tags"><span>.NET MAUI</span><span>C#</span><span>Mobile</span><span>HR / Payroll</span></p>
-          <p>Cross-platform employee app for timesheet &amp; payroll management — profile management, multi-entry timesheets with approval workflow, and emergency contacts, gated by role-based access. Built and maintained end-to-end with .NET MAUI.</p>
+          <p class="work-desc">
+            Cross-platform employee app for timesheet and payroll management — profile management,
+            multi-entry timesheets with approval workflow, and emergency contacts.
+          </p>
+          <dl class="work-meta">
+            <div><dt>Role</dt><dd>Developer — built and maintained end to end</dd></div>
+            <div><dt>Stack</dt><dd>.NET MAUI · C# · REST APIs · Role-based access</dd></div>
+            <div><dt>Impact</dt><dd>Published on Google Play; timesheet, payroll and profile self-service for employees</dd></div>
+          </dl>
           <p class="card-link">
-            <a href="https://play.google.com/store/apps/details?id=com.HCMevolve.employee" target="_blank" rel="noopener">View on Google Play &rarr;</a>
+            <a href="https://play.google.com/store/apps/details?id=com.HCMevolve.employee" target="_blank" rel="noopener">View on Google Play <span aria-hidden="true">→</span></a>
           </p>
         </article>
+
       </div>
     </section>
 
-    <!-- SKILLS -->
-    <section id="skills" aria-labelledby="skills-h">
-      <h2 id="skills-h" class="reveal">Technical Skills</h2>
-
-      <!-- Tech-stack logo grid -->
-      <ul class="tech-grid reveal" aria-label="Core technologies">
-        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="" loading="lazy" /><span>C#</span></li>
-        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" alt="" loading="lazy" /><span>.NET</span></li>
-        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="" loading="lazy" /><span>TypeScript</span></li>
-        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" loading="lazy" /><span>JavaScript</span></li>
-        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" loading="lazy" /><span>React</span></li>
-        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg" alt="" loading="lazy" /><span>Angular</span></li>
-        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="" loading="lazy" /><span>Vue.js</span></li>
-        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="" loading="lazy" /><span>Azure</span></li>
-        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="" loading="lazy" /><span>SQL Server</span></li>
-        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="" loading="lazy" /><span>PostgreSQL</span></li>
-        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="" loading="lazy" /><span>Docker</span></li>
-        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" loading="lazy" /><span>Git</span></li>
-      </ul>
-
-      <dl class="skills reveal">
-        <div><dt>Languages</dt><dd>C#, TypeScript, JavaScript (ES6+), Python, F#</dd></div>
-        <div><dt>Frontend</dt><dd>React, Angular, Vue.js, Blazor, .NET MAUI</dd></div>
-        <div><dt>Backend</dt><dd>.NET Core / ASP.NET MVC, RESTful APIs, GraphQL, Microservices</dd></div>
-        <div><dt>Auth &amp; Security</dt><dd>OAuth 2.0, JWT, OpenID Connect, ASP.NET Core Identity</dd></div>
-        <div><dt>Databases</dt><dd>SQL Server, PostgreSQL, MySQL, MongoDB · EF Core, Dapper, LINQ · Query optimization, indexing</dd></div>
-        <div><dt>Cloud &amp; DevOps</dt><dd>Microsoft Azure, Azure DevOps (Boards, Repos, Pipelines, Releases), CI/CD, Docker, Git</dd></div>
-        <div><dt>Observability</dt><dd>Grafana, Sentry, OpenLens</dd></div>
-        <div><dt>Architecture</dt><dd>Clean Architecture, TDD, Agile (Scrum / Kanban), performance optimization, scalable system design</dd></div>
-        <div><dt>AI Dev Tools</dt><dd>GitHub Copilot, ChatGPT, Claude</dd></div>
-        <div><dt>Tools</dt><dd>Visual Studio, VS Code, Postman, Figma, WinSCP, PuTTY</dd></div>
-      </dl>
-    </section>
-
-    <!-- CURRENTLY EXPLORING -->
-    <section id="exploring" aria-labelledby="explore-h">
-      <h2 id="explore-h" class="reveal">Currently Exploring</h2>
-      <p class="reveal section-intro">Where I'm investing next — building on my .NET &amp; Azure foundation toward the AI-native stack.</p>
-      <div class="cards">
-        <article class="card explore reveal">
-          <h3>AI Engineering on .NET</h3>
-          <p class="tags"><span>Azure OpenAI</span><span>Semantic Kernel</span><span>RAG</span></p>
-          <p>Building LLM-powered features with <code>Microsoft.Extensions.AI</code>, Semantic Kernel, and retrieval-augmented generation over Azure AI Search.</p>
-        </article>
-        <article class="card explore reveal">
-          <h3>Model Context Protocol (MCP)</h3>
-          <p class="tags"><span>C#</span><span>AI Agents</span><span>Tooling</span></p>
-          <p>Authoring MCP servers in C# to connect AI assistants to real systems and data — the emerging standard for agentic tooling.</p>
-        </article>
-        <article class="card explore reveal">
-          <h3>.NET Aspire</h3>
-          <p class="tags"><span>Cloud-Native</span><span>Distributed</span><span>Orchestration</span></p>
-          <p>Composing observable, distributed cloud-native apps with .NET Aspire's orchestration and service-defaults model.</p>
-        </article>
-        <article class="card explore reveal">
-          <h3>OpenTelemetry</h3>
-          <p class="tags"><span>Tracing</span><span>Metrics</span><span>Logs</span></p>
-          <p>Standardizing observability on vendor-neutral OpenTelemetry — a natural evolution of my Grafana &amp; Sentry experience.</p>
-        </article>
-        <article class="card explore reveal">
-          <h3>Kubernetes &amp; IaC</h3>
-          <p class="tags"><span>AKS</span><span>Bicep</span><span>Terraform</span></p>
-          <p>Deepening platform-engineering skills with Azure Kubernetes Service and infrastructure-as-code via Bicep and Terraform.</p>
-        </article>
+    <!-- 03 — EXPERIENCE -->
+    <section id="experience" class="container" aria-labelledby="exp-h">
+      <div class="sec-head reveal">
+        <p class="sec-num">03 — Experience</p>
+        <h2 id="exp-h">Four years. Four teams.</h2>
       </div>
-    </section>
 
-    <!-- EDUCATION & CERTS -->
-    <section id="education" aria-labelledby="edu-h">
-      <h2 id="edu-h" class="reveal">Education &amp; Certifications</h2>
       <article class="entry reveal">
-        <div class="entry-head">
-          <h3>B.S. in Information Technology</h3>
-          <span class="dates">Angeles University Foundation</span>
+        <p class="entry-dates">Apr 2026 — Present</p>
+        <div class="entry-body">
+          <h3>Full Stack Developer — AgilityX Team</h3>
+          <p class="org">EY GDS (CS) Philippines Inc.</p>
+          <ul>
+            <li>Develop and deliver full-stack features on an EY-wide mobility and tax platform serving day-to-day EY users.</li>
+            <li>Translate business and compliance requirements into scalable, production-ready solutions within a cross-functional Agile team.</li>
+            <li>Contribute to API design and integration with clean, maintainable TypeScript/C# aligned with Clean Architecture principles.</li>
+            <li>Participate in code reviews, sprint planning, and CI/CD deployments via Azure DevOps.</li>
+          </ul>
+          <p class="entry-stack">React · TypeScript · .NET · Azure · Azure DevOps</p>
         </div>
-        <p class="stack-line">Specialization: Web &amp; Mobile Development · Academic Scholar (AUF &amp; Tulong Dunong Program)</p>
       </article>
+
+      <article class="entry reveal">
+        <p class="entry-dates">Jul 2025 — Mar 2026</p>
+        <div class="entry-body">
+          <h3>Full Stack Developer — Core Client SWAT Team</h3>
+          <p class="org">EY GDS (CS) Philippines Inc.</p>
+          <ul>
+            <li>Selected for the elite SWAT Team, resolving high-severity production incidents across 18+ enterprise applications and reducing mean time to resolution.</li>
+            <li>Engineered and enhanced full-stack systems using .NET 6/9, Angular, React, and Blazor at scale.</li>
+            <li>Designed and optimized REST APIs and complex SQL queries, achieving measurable reductions in backend response latency.</li>
+            <li>Drove root cause analysis on recurring failures, implementing preventive fixes that eliminated regression patterns.</li>
+            <li>Leveraged Grafana and Sentry to proactively monitor system health and address degradations before user impact.</li>
+          </ul>
+          <p class="entry-stack">.NET 6/9 · Angular · React · Blazor · Grafana · Sentry</p>
+        </div>
+      </article>
+
+      <article class="entry reveal">
+        <p class="entry-dates">Jun 2024 — May 2025</p>
+        <div class="entry-body">
+          <h3>Software Engineer</h3>
+          <p class="org">Premier Software Enterprise Inc. (PSEi Subsidiary)</p>
+          <ul>
+            <li>Played a pivotal role in modernizing the Philippine Dealing System (PDS), improving security, usability, and performance for a regulated trading environment.</li>
+            <li>Optimized backend services and SQL queries, significantly reducing execution times under high transaction loads.</li>
+            <li>Implemented secure authentication flows using OAuth 2.0 and JWT, strengthening application security posture.</li>
+            <li>Delivered end-to-end features within Azure DevOps Agile workflows alongside product and UX teams.</li>
+          </ul>
+          <p class="entry-stack">.NET Core 8 · Blazor · Vue.js · MySQL · OAuth 2.0</p>
+        </div>
+      </article>
+
+      <article class="entry reveal">
+        <p class="entry-dates">Feb 2022 — Jun 2024</p>
+        <div class="entry-body">
+          <h3>C# .NET Developer</h3>
+          <p class="org">1080 Agile Pty. Ltd</p>
+          <ul>
+            <li>Built and maintained features across multiple .NET applications for recruitment, HR, and mobile operations.</li>
+            <li>Led migration of the Hughes Mobile App from legacy Xamarin to .NET MAUI, improving cross-platform performance and supportability.</li>
+            <li>Built and maintained <strong>HCMevolve</strong>, a .NET MAUI employee self-service app for timesheet, payroll, and profile management published on Google Play.</li>
+            <li>Resolved SQL bottlenecks and improved query performance, enhancing reliability and responsiveness.</li>
+            <li>Supported automation of HR and payroll workflows, improving operational efficiency for client organizations.</li>
+          </ul>
+          <p class="entry-stack">.NET · Blazor · .NET MAUI · Azure DevOps</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- 04 — TECHNOLOGY -->
+    <section id="skills" aria-labelledby="skills-h">
+      <div class="container">
+        <div class="sec-head reveal">
+          <p class="sec-num">04 — Technology</p>
+          <h2 id="skills-h">The stack behind the work.</h2>
+        </div>
+      </div>
+
+      <!-- Marquee -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>C#</span><i>·</i><span>.NET</span><i>·</i><span>TypeScript</span><i>·</i><span>React</span><i>·</i>
+          <span>Angular</span><i>·</i><span>Vue.js</span><i>·</i><span>Blazor</span><i>·</i><span>.NET MAUI</span><i>·</i>
+          <span>Azure</span><i>·</i><span>SQL Server</span><i>·</i><span>Docker</span><i>·</i><span>CI/CD</span><i>·</i>
+          <span>C#</span><i>·</i><span>.NET</span><i>·</i><span>TypeScript</span><i>·</i><span>React</span><i>·</i>
+          <span>Angular</span><i>·</i><span>Vue.js</span><i>·</i><span>Blazor</span><i>·</i><span>.NET MAUI</span><i>·</i>
+          <span>Azure</span><i>·</i><span>SQL Server</span><i>·</i><span>Docker</span><i>·</i><span>CI/CD</span><i>·</i>
+        </div>
+      </div>
+
+      <div class="container">
+        <ul class="tech-grid reveal" aria-label="Core technologies">
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="" loading="lazy" /><span>C#</span></li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" alt="" loading="lazy" /><span>.NET</span></li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="" loading="lazy" /><span>TypeScript</span></li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" loading="lazy" /><span>JavaScript</span></li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" loading="lazy" /><span>React</span></li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg" alt="" loading="lazy" /><span>Angular</span></li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="" loading="lazy" /><span>Vue.js</span></li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="" loading="lazy" /><span>Azure</span></li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="" loading="lazy" /><span>SQL Server</span></li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="" loading="lazy" /><span>PostgreSQL</span></li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="" loading="lazy" /><span>Docker</span></li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" loading="lazy" /><span>Git</span></li>
+        </ul>
+
+        <dl class="skills reveal">
+          <div><dt>Languages</dt><dd>C#, TypeScript, JavaScript (ES6+), Python, F#</dd></div>
+          <div><dt>Frontend</dt><dd>React, Angular, Vue.js, Blazor, .NET MAUI</dd></div>
+          <div><dt>Backend</dt><dd>.NET Core / ASP.NET MVC, RESTful APIs, GraphQL, Microservices</dd></div>
+          <div><dt>Auth &amp; Security</dt><dd>OAuth 2.0, JWT, OpenID Connect, ASP.NET Core Identity</dd></div>
+          <div><dt>Databases</dt><dd>SQL Server, PostgreSQL, MySQL, MongoDB · EF Core, Dapper, LINQ · Query optimization, indexing</dd></div>
+          <div><dt>Cloud &amp; DevOps</dt><dd>Microsoft Azure, Azure DevOps (Boards, Repos, Pipelines, Releases), CI/CD, Docker, Git</dd></div>
+          <div><dt>Observability</dt><dd>Grafana, Sentry, OpenLens</dd></div>
+          <div><dt>Architecture</dt><dd>Clean Architecture, TDD, Agile (Scrum / Kanban), performance optimization, scalable system design</dd></div>
+          <div><dt>AI Dev Tools</dt><dd>GitHub Copilot, ChatGPT, Claude</dd></div>
+          <div><dt>Tools</dt><dd>Visual Studio, VS Code, Postman, Figma, WinSCP, PuTTY</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- 05 — CURRENTLY EXPLORING -->
+    <section id="exploring" class="container" aria-labelledby="explore-h">
+      <div class="sec-head reveal">
+        <p class="sec-num">05 — Currently exploring</p>
+        <h2 id="explore-h">Where I'm investing next.</h2>
+        <p class="sec-lede">Building on my .NET &amp; Azure foundation toward the AI-native stack.</p>
+      </div>
+      <div class="explore-grid">
+        <article class="card explore reveal">
+          <p class="explore-num">01</p>
+          <h3>AI Engineering on .NET</h3>
+          <p>Building LLM-powered features with <code>Microsoft.Extensions.AI</code>, Semantic Kernel, and retrieval-augmented generation over Azure AI Search.</p>
+          <p class="tags"><span>Azure OpenAI</span><span>Semantic Kernel</span><span>RAG</span></p>
+        </article>
+        <article class="card explore reveal">
+          <p class="explore-num">02</p>
+          <h3>Model Context Protocol</h3>
+          <p>Authoring MCP servers in C# to connect AI assistants to real systems and data — the emerging standard for agentic tooling.</p>
+          <p class="tags"><span>C#</span><span>AI Agents</span><span>Tooling</span></p>
+        </article>
+        <article class="card explore reveal">
+          <p class="explore-num">03</p>
+          <h3>.NET Aspire</h3>
+          <p>Composing observable, distributed cloud-native apps with .NET Aspire's orchestration and service-defaults model.</p>
+          <p class="tags"><span>Cloud-Native</span><span>Distributed</span><span>Orchestration</span></p>
+        </article>
+        <article class="card explore reveal">
+          <p class="explore-num">04</p>
+          <h3>OpenTelemetry</h3>
+          <p>Standardizing observability on vendor-neutral OpenTelemetry — a natural evolution of my Grafana &amp; Sentry experience.</p>
+          <p class="tags"><span>Tracing</span><span>Metrics</span><span>Logs</span></p>
+        </article>
+        <article class="card explore reveal">
+          <p class="explore-num">05</p>
+          <h3>Kubernetes &amp; IaC</h3>
+          <p>Deepening platform-engineering skills with Azure Kubernetes Service and infrastructure-as-code via Bicep and Terraform.</p>
+          <p class="tags"><span>AKS</span><span>Bicep</span><span>Terraform</span></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 06 — EDUCATION & CERTS -->
+    <section id="education" class="container" aria-labelledby="edu-h">
+      <div class="sec-head reveal">
+        <p class="sec-num">06 — Education &amp; certifications</p>
+        <h2 id="edu-h">Foundations and continued study.</h2>
+      </div>
+
+      <article class="entry reveal">
+        <p class="entry-dates">Angeles University Foundation</p>
+        <div class="entry-body">
+          <h3>B.S. in Information Technology</h3>
+          <p class="org">Specialization: Web &amp; Mobile Development</p>
+          <p class="entry-stack">Academic Scholar — AUF &amp; Tulong Dunong Program</p>
+        </div>
+      </article>
+
       <ul class="certs reveal">
-        <li>ASP.NET Core Identity &amp; Security</li>
-        <li>RESTful Web API Development (.NET)</li>
-        <li>Microsoft Technology Associate: Python</li>
-        <li>Cybersecurity Essentials — Cisco</li>
-        <li>MLOps Fundamentals (Azure)</li>
-        <li>Generative AI &amp; LLM Engineering</li>
-        <li>.NET MAUI Mobile App Development — Udemy</li>
-        <li>Fundamentals of Vue.js — Coursera</li>
+        <li><span class="cert-name">ASP.NET Core Identity &amp; Security</span></li>
+        <li><span class="cert-name">RESTful Web API Development (.NET)</span></li>
+        <li><span class="cert-name">Microsoft Technology Associate: Python</span></li>
+        <li><span class="cert-name">Cybersecurity Essentials</span><span class="cert-by">Cisco</span></li>
+        <li><span class="cert-name">MLOps Fundamentals (Azure)</span></li>
+        <li><span class="cert-name">Generative AI &amp; LLM Engineering</span></li>
+        <li><span class="cert-name">.NET MAUI Mobile App Development</span><span class="cert-by">Udemy</span></li>
+        <li><span class="cert-name">Fundamentals of Vue.js</span><span class="cert-by">Coursera</span></li>
       </ul>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" aria-labelledby="contact-h">
-      <h2 id="contact-h" class="reveal">Get in touch</h2>
-      <p class="reveal">Open to senior full-stack and backend-leaning roles. The fastest way to reach me is email.</p>
-      <nav class="link-row reveal" aria-label="Contact links">
-        <a class="btn btn-primary" href="mailto:desilva.kb02@gmail.com?subject=Opportunity%20for%20Kim%20Brian%20De%20Silva">desilva.kb02@gmail.com</a>
-        <button class="btn" id="copyEmail" type="button" data-email="desilva.kb02@gmail.com">Copy email</button>
-        <a class="btn" href="tel:+639268389237">+63 926 838 9237</a>
-        <a class="btn" href="https://linkedin.com/in/kbdsilva" target="_blank" rel="noopener">LinkedIn</a>
-      </nav>
+    <!-- 07 — CONTACT -->
+    <section id="contact" class="container" aria-labelledby="contact-h">
+      <div class="sec-head reveal">
+        <p class="sec-num">07 — Contact</p>
+        <h2 id="contact-h">Let's work together.</h2>
+      </div>
+      <div class="contact-box reveal">
+        <p class="contact-copy">
+          Open to senior full-stack and backend-leaning roles. The fastest way to reach me is email.
+        </p>
+        <a class="contact-mail" href="mailto:desilva.kb02@gmail.com?subject=Opportunity%20for%20Kim%20Brian%20De%20Silva">desilva.kb02@gmail.com</a>
+        <nav class="link-row" aria-label="Contact links">
+          <button class="btn" id="copyEmail" type="button" data-email="desilva.kb02@gmail.com">Copy email</button>
+          <a class="btn" href="tel:+639268389237">+63 926 838 9237</a>
+          <a class="btn" href="https://linkedin.com/in/kbdsilva" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://github.com/kaiserz02" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+      </div>
     </section>
 
   </main>
 
-  <footer class="container">
-    <p>© <span id="year">2026</span> Kim Brian De Silva · Built with plain HTML &amp; CSS.</p>
+  <footer>
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Kim Brian De Silva</p>
+      <p class="footer-meta">Pampanga, Philippines · Built with plain HTML, CSS &amp; JavaScript</p>
+    </div>
   </footer>
 
   <!-- Back to top -->

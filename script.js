@@ -140,7 +140,7 @@
       if (e.target.tagName === "A") closeMenu();
     });
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 640) closeMenu();
+      if (window.innerWidth > 880) closeMenu();
     });
   }
 
@@ -148,7 +148,7 @@
   var filterBar = document.querySelector(".filter-bar");
   var cardsEl = document.getElementById("projectCards");
   if (filterBar && cardsEl) {
-    var projectCards = Array.prototype.slice.call(cardsEl.querySelectorAll(".card"));
+    var projectCards = Array.prototype.slice.call(cardsEl.querySelectorAll(".work"));
     filterBar.addEventListener("click", function (e) {
       var btn = e.target.closest(".chip");
       if (!btn) return;
@@ -177,7 +177,7 @@
 
   /* ---- Card pointer spotlight ---- */
   if (!reduceMotion && window.matchMedia("(pointer: fine)").matches) {
-    document.querySelectorAll(".card").forEach(function (card) {
+    document.querySelectorAll(".card, .work").forEach(function (card) {
       card.addEventListener("pointermove", function (e) {
         var rect = card.getBoundingClientRect();
         card.style.setProperty("--mx", (e.clientX - rect.left) + "px");
