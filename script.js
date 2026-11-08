@@ -2,25 +2,11 @@
   "use strict";
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var NAV_BREAKPOINT = 920;
 
   /* ---- Current year ---- */
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-  /* ---- Rotating hero word ---- */
-  var rotateEl = document.getElementById("rotateWord");
-  if (rotateEl && !reduceMotion) {
-    var words = [".NET", "React", "Angular", "Azure", "TypeScript", "AI"];
-    var i = 0;
-    setInterval(function () {
-      rotateEl.classList.add("swap");
-      setTimeout(function () {
-        i = (i + 1) % words.length;
-        rotateEl.textContent = words[i];
-        rotateEl.classList.remove("swap");
-      }, 250);
-    }, 2200);
-  }
 
   /* ---- Count-up stats ---- */
   function countUp(el) {
@@ -48,80 +34,52 @@
         entry.target.querySelectorAll("[data-target]").forEach(countUp);
         obs.unobserve(entry.target);
       });
-    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
     revealEls.forEach(function (el) { io.observe(el); });
   } else {
     revealEls.forEach(function (el) { el.classList.add("visible"); });
     document.querySelectorAll("[data-target]").forEach(countUp);
   }
 
-  /* ---- Sticky nav: shadow + active-section highlight ---- */
+  /* ---- Sticky nav state + active section + progress + back-to-top ---- */
   var nav = document.getElementById("nav");
-  var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav-links a"));
-  var sections = navLinks
+  var progressEl = document.getElementById("scrollProgress");
+  var toTop = document.getElementById("toTop");
+  var navLinkEls = Array.prototype.slice.call(document.querySelectorAll(".nav-links a"));
+  var sections = navLinkEls
     .map(function (a) { return document.querySelector(a.getAttribute("href")); })
     .filter(Boolean);
 
   function onScroll() {
-    if (nav) nav.classList.toggle("scrolled", window.scrollY > 8);
+    var y = window.scrollY;
 
-    var toTop = document.getElementById("toTop");
-    if (toTop) toTop.classList.toggle("show", window.scrollY > 500);
+    if (nav) nav.classList.toggle("scrolled", y > 8);
+    if (toTop) toTop.classList.toggle("show", y > 600);
 
-    var pos = window.scrollY + (nav ? nav.offsetHeight : 0) + 24;
-    var current = sections[0];
+    if (progressEl) {
+      var doc = document.documentElement;
+      var max = doc.scrollHeight - doc.clientHeight;
+      progressEl.style.transform = "scaleX(" + (max > 0 ? Math.min(y / max, 1) : 0) + ")";
+    }
+
+    var pos = y + (nav ? nav.offsetHeight : 0) + 32;
+    var current = null;
     sections.forEach(function (sec) {
       if (sec.offsetTop <= pos) current = sec;
     });
-    navLinks.forEach(function (a) {
-      a.classList.toggle("active", current && a.getAttribute("href") === "#" + current.id);
+    navLinkEls.forEach(function (a) {
+      a.classList.toggle("active", !!current && a.getAttribute("href") === "#" + current.id);
     });
   }
   window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
   onScroll();
 
   /* ---- Back to top ---- */
-  var toTop = document.getElementById("toTop");
   if (toTop) {
     toTop.addEventListener("click", function () {
       window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
     });
-  }
-
-  /* ---- Copy email ---- */
-  var copyBtn = document.getElementById("copyEmail");
-  if (copyBtn) {
-    copyBtn.addEventListener("click", function () {
-      var email = copyBtn.getAttribute("data-email");
-      var done = function () {
-        var original = "Copy email";
-        copyBtn.textContent = "Copied!";
-        copyBtn.classList.add("copied");
-        setTimeout(function () {
-          copyBtn.textContent = original;
-          copyBtn.classList.remove("copied");
-        }, 1600);
-      };
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(email).then(done, function () { window.location.href = "mailto:" + email; });
-      } else {
-        window.location.href = "mailto:" + email;
-      }
-    });
-  }
-
-  /* ---- Scroll progress bar ---- */
-  var progressEl = document.getElementById("scrollProgress");
-  if (progressEl) {
-    var updateProgress = function () {
-      var doc = document.documentElement;
-      var max = doc.scrollHeight - doc.clientHeight;
-      var ratio = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
-      progressEl.style.transform = "scaleX(" + ratio + ")";
-    };
-    window.addEventListener("scroll", updateProgress, { passive: true });
-    window.addEventListener("resize", updateProgress);
-    updateProgress();
   }
 
   /* ---- Mobile nav toggle ---- */
@@ -137,12 +95,36 @@
       navToggle.setAttribute("aria-expanded", open ? "true" : "false");
     });
     navLinksEl.addEventListener("click", function (e) {
-      if (e.target.tagName === "A") closeMenu();
+      if (e.target.closest("a")) closeMenu();
     });
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 880) closeMenu();
+      if (window.innerWidth > NAV_BREAKPOINT) closeMenu();
     });
   }
+
+  /* ---- Copy email (works for any button with data-email) ---- */
+  document.querySelectorAll("[data-email]").forEach(function (btn) {
+    var labelEl = btn.querySelector(".label") || btn;
+    var original = labelEl.textContent;
+    btn.addEventListener("click", function () {
+      var email = btn.getAttribute("data-email");
+      var done = function () {
+        labelEl.textContent = "Copied!";
+        btn.classList.add("copied");
+        setTimeout(function () {
+          labelEl.textContent = original;
+          btn.classList.remove("copied");
+        }, 2000);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(done, function () {
+          window.location.href = "mailto:" + email;
+        });
+      } else {
+        window.location.href = "mailto:" + email;
+      }
+    });
+  });
 
   /* ---- Project filter chips ---- */
   var filterBar = document.querySelector(".filter-bar");
@@ -153,11 +135,13 @@
       var btn = e.target.closest(".chip");
       if (!btn) return;
       var filter = btn.getAttribute("data-filter");
+
       filterBar.querySelectorAll(".chip").forEach(function (c) {
         var on = c === btn;
         c.classList.toggle("active", on);
         c.setAttribute("aria-pressed", on ? "true" : "false");
       });
+
       projectCards.forEach(function (card) {
         var tags = (card.getAttribute("data-tags") || "").split(" ");
         var show = filter === "all" || tags.indexOf(filter) !== -1;
@@ -171,17 +155,6 @@
         } else {
           card.classList.add("is-hidden");
         }
-      });
-    });
-  }
-
-  /* ---- Card pointer spotlight ---- */
-  if (!reduceMotion && window.matchMedia("(pointer: fine)").matches) {
-    document.querySelectorAll(".card, .work").forEach(function (card) {
-      card.addEventListener("pointermove", function (e) {
-        var rect = card.getBoundingClientRect();
-        card.style.setProperty("--mx", (e.clientX - rect.left) + "px");
-        card.style.setProperty("--my", (e.clientY - rect.top) + "px");
       });
     });
   }
