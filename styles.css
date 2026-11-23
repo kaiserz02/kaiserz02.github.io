@@ -826,6 +826,18 @@ main { padding-top: var(--nav-h); }
   flex-direction: column;
   gap: var(--space-md);
 }
+.tl-sub {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(65, 71, 84, 0.5);
+}
+.tl-sub .marker { letter-spacing: 0.08em; font-weight: 700; }
+.tl-sub .code-badge { color: var(--outline); }
+.tl-sub + ul { margin-top: -0.25rem; }
 .tl-body ul { display: flex; flex-direction: column; gap: 0.75rem; }
 .tl-body li {
   display: flex;
@@ -843,6 +855,46 @@ main { padding-top: var(--nav-h); }
   border-top: 1px solid rgba(37, 42, 56, 0.6);
 }
 .tl-stack .pill { background: var(--surface-container); color: var(--outline); padding: 0.25rem 0.6rem; }
+
+/* ===== Freelance engagements note ===== */
+.fnote {
+  margin-top: var(--space-xl);
+  padding: var(--space-lg);
+  border-radius: var(--r-lg);
+  border: 1px dashed var(--outline-variant);
+  background: var(--surface-container-lowest);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+.fnote-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+.fnote-title { display: flex; align-items: flex-start; gap: 0.75rem; }
+.fnote-title .material-symbols-outlined { font-size: 26px; margin-top: 2px; }
+.fnote h3 { font-size: 22px; line-height: 28px; font-weight: 700; letter-spacing: -0.015em; }
+.fnote-org { display: block; font-size: 13px; color: var(--primary); font-weight: 500; }
+.fnote-tag {
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--r-pill);
+  background: var(--surface-container-high);
+  color: var(--outline);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+.fnote p { font-size: 14px; line-height: 22px; color: var(--on-surface-variant); }
+.fnote p strong { color: var(--on-surface); font-weight: 600; }
+.fnote .fnote-sub {
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--outline);
+  padding-top: var(--space-sm);
+  border-top: 1px solid rgba(65, 71, 84, 0.5);
+}
 
 /* ===== Technology matrix ===== */
 .matrix {
